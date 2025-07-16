@@ -10,16 +10,78 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> <!-- PAra importar la fuente a la hoja de estilos -->
 
-    <!-- === Font Awesome para los iconos de redes sociales === -->
+    <!-- === Font Awesome pa los iconos de redes sociales del pie === -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- === Css en el mismo codigo === -->
     <style>
+            /* Estilos para el contenedor principal del formulario */
+            .registro-container {
+                width: 100%;
+                max-width: 400px; /* Ancho máximo del contenedor */
+                margin: 40px auto; /* Centra el contenedor en la página */
+                padding: 25px;
+                background-color: #f7fff8;
+                border: 6px solid #ddd;
+                border-radius: 25px; /* Bordes redondeados */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+                font-family: 'Permanent Marker', cursive;
+            }
+    
+            /* Estilo para el título del formulario */
+            .registro-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+                font-family: 'Permanent Marker', cursive;
+            }
+    
+            /* Para agrupar y cada etiqueta y campo de entrada para darles espaciado */
+            .form-group {
+                margin-bottom: 15px;
+            }
+    
+            /* Estilo para los contenedore del Nombre, Cédula, etc.) */
+            .form-group label {
+                display: block; /* La seccion ocupa una línea completa */
+                margin-bottom: 5px; /* El margen del boton */
+                font-weight: bold;
+                color: #015300;
+            }
+    
+            /* Estilo para los campos de texto y el selector */
+            .form-group input,
+            .form-group select {
+                width: 100%; /* Ocupa todo el ancho del contenedor */
+                padding: 10px;
+                border: 3px solid #1c5000;
+                border-radius: 25px;
+                box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+                font-family: 'Permanent Marker', cursive;
+            }
+            
+            /* Estilo para el botón de registro */
+            .submit-btn {
+                width: 100%;
+                padding: 12px;
+                background-color: rgb(0, 65, 0); /* Color azul */
+                color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 30px;
+                font-size: 16px;
+                cursor: pointer; /* Cambia el cursor a una mano */
+                transition: background-color 0.3s ease; /* Transición suave */
+                font-family: 'Permanent Marker', cursive;
+            }
+    
+            /* Efecto al pasar el mouse sobre el botón */
+            .submit-btn:hover {
+                background-color: #3f9f52; /* Un azul más oscuro */
+            }
         /* Fondito */
         body {
             background-color: #f3d1c5; /* Color salmon/durazno como en la foto */
             color: hsl(0, 100%, 95%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column; /* Para apilar los elementos verticalmente */
             justify-content: center; 
@@ -30,9 +92,9 @@
             box-sizing: border-box;
         }
 
-        /* === BARRA DE NAVEGACION SUPERIOR === */
+        /* === Barra de arriba === */
         .main-nav {
-            border: 6px solid rgb(0, 65, 0);
+            border: 6px solid rgb(9, 64, 0);
             font-family: 'Permanent Marker', cursive; /* Fuente estilo marcador */
             font-size: 1.1rem;
             text-align: center;
@@ -61,8 +123,8 @@
         .card-container {
             border-radius: 30px; /* borde del contenedor grande */
             border: 6px solid rgb(0, 65, 0); /* El grosor */
-            padding: 25px; /* Tamaño de todo el contenedor */
-            max-width: 450px; /* Tamaño maximo del ancho */
+            padding: 55px; /* Tamaño de todo el contenedor */
+            max-width: 850px; /* Tamaño maximo del ancho */
             text-align: center; /* Para que se centre todo */
             background-color: #2c6b4f; /* Verde oscuro como en la foto */
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* El efecto de sombrita debajo de todo */
@@ -93,28 +155,6 @@
             border-radius: 35px; /* La redondes de los bordes */
             opacity: 1;
             transition: opacity 0.5s ease-in-out;box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        /* El efecto cuando cambia de imagen */
-        #main-image.fade-out {
-            opacity: 0;
-        }
- 
-        .nav-dots {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.4); /* Puntitos mas sutiles */
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
         /* El color del puntito */
@@ -166,7 +206,7 @@
         /* El contenedor chiquito de las redes */
         .social-media-links {
             /* El contenedor de anajo */
-            border: 6px solid rgb(0, 65, 0);
+            border: 6px solid rgb(0, 65, 0); 
             background-color: #2c6b4f; 
             border-radius: 25px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
@@ -205,25 +245,64 @@
         <a href="registrarse.html">REGISTRARSE</a>
     </nav>
 
-    <!-- El slider de java -->
+    <!-- El contenedor -->
     <div class="card-container">
         
-        <h1>Google</h1>
+        <h1>Registrate</h1>
 
         <div class="image-gallery">
-            <img id="main-image" src="img/google1.png" alt="Google">
+    <!-- Parte donde el registro -->
+    <div class="registro-container">
+        <h2>Formulario de Registro</h2>
+        <form action="#" method="POST"> <!-- Aun no creamos a donde se van los datos :c -->
+
+        <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
         </div>
 
-        <div class="nav-dots">
-            <span class="dot active" data-index="0"></span> 
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-        </div> 
+        <div class="form-group">
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" required>
+        </div>
 
-        <div class="info-section"> <!-- Las letras de "Detalles" y "de La info" -->
-            <h2 id="info-title">Detalles</h2>
-            <p id="info-text">El corazón de Google. Desde su inicio, Google Search ha revolucionado la forma en que accedemos a la información, haciendo que el conocimiento del mundo sea universalmente accesible.</p>
+        <div class="form-group">
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro🤨?</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label for="genero">Estado Civil:</label>
+        <select id="genero" name="genero" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="masculino">Soltero</option>
+        <option value="femenino">Casado</option>
+        <option value="otro">Divorciado</option>
+        <option value="femenino">Viudo</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" name="nacionalidad" required>
+        </div>
+
+        <div class="form-group">
+        <label for="celular">Número Celular:</label>
+        <input type="tel" id="celular" name="celular" required>
+        </div>
+        
+        <button type="submit" class="submit-btn">Registrarse</button>
+
+        </form>
+        <p>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+    </div>
+
         </div>
 
     </div>
@@ -260,67 +339,5 @@
         </a>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => { // El scrip de Java para las imagenes //
-
-            const slides = [ /* Las imagenes junto con su info */
-                {
-                    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/960px-Googleplex_HQ_%28cropped%29.jpg",
-                    // la imagen de las oficinas de google
-                    info: "El corazón de Google. Desde su inicio, Google Search ha revolucionado la forma en que accedemos a la información, haciendo que el conocimiento del mundo sea universalmente accesible."
-                },
-                {
-                    image: "https://i0.wp.com/ecuadorgeek.com/wp-content/uploads/2023/11/que-es-android-ecuador-geek.webp?resize=750%2C422&ssl=1",
-                    // la imagen de Android
-                    info: "El sistema operativo móvil más popular del mundo. Android impulsa miles de millones de dispositivos, ofreciendo una plataforma abierta y personalizable para usuarios y desarrolladores."
-                },
-                {
-                    image: "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2023/02/google-maps-2961754.jpg",
-                    // la imagen de Maps
-                    info: "Tu guía para el mundo real. Google Maps transformó la navegación, permitiéndonos explorar lugares, encontrar las mejores rutas y descubrir nuevos negocios con solo unos toques."
-                },
-                {
-                    image: "https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7.fit_lim.size_1050x591.v1569482492.jpg",
-                    // la de Google Cloud
-                    info: "La infraestructura que lo hace todo posible. Google Cloud ofrece la misma tecnología segura y potente que Google utiliza para sus propios productos para potenciar empresas de todo el mundo."
-                }
-            ];
-
-            const mainImage = document.getElementById('main-image');
-            const infoText = document.getElementById('info-text');
-            const dots = document.querySelectorAll('.dot');
-
-            let currentIndex = 1; // Para saber cual slide esta activo
-
-            function updateGallery(index) {
-                // Si el slide ya esta activo, no hacer nada
-                if (index == currentIndex && mainImage.src) return;
-
-                currentIndex = index;
-                mainImage.classList.add('fade-out');
-                
-                setTimeout(() => {
-                    const currentSlide = slides[index];
-                    mainImage.src = currentSlide.image; 
-                    infoText.textContent = currentSlide.info; // Para que el cuadro de informacion cambie tambien
-                    mainImage.classList.remove('fade-out'); // El efecto de desaparicion mientras cambia
-                }, 500);
-
-                dots.forEach(dot => dot.classList.remove('active')); // Aqui desaparece la imagen y aparece la otra
-                dots[index].classList.add('active');
-            }
-
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const index = dot.getAttribute('data-index');
-                    updateGallery(index);
-                });
-            });
-
-            // Cargar la imagen 1 al empezar //
-            updateGallery(0);
-
-        });
-    </script> <!-- Aqui acaba el script -->
 </body>
 </html>
