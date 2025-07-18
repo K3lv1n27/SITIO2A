@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorando Google</title>
+    <title>Soporte Google</title>
     
     <!-- === Las fuentes que user "para las letras tipo marcador" === -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Para hacer coneccion con la pagina de donde saque las fuentes -->
@@ -107,22 +107,6 @@
             margin-bottom: 20px;
         }
 
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.4); /* Puntitos mas sutiles */
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        /* El color del puntito */
-        .dot.active {
-            background-color: #ffffff;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Puntito activo blanco */
-        }
-
         /* Lo de la palabra informacion */
         .info-section h2 {
             margin-bottom: 10px;
@@ -208,10 +192,10 @@
     <!-- El slider de java -->
     <div class="card-container">
         
-        <h1>Google</h1>
+        <h1>Soporte Tecnico</h1>
 
         <div class="image-gallery">
-            <img id="main-image" src="img/google1.png" alt="Google">
+            <img id="main-image" src="img/soporte.png" alt="Google">
         </div>
 
         <div class="nav-dots">
@@ -223,7 +207,11 @@
 
         <div class="info-section"> <!-- Las letras de "Detalles" y "de La info" -->
             <h2 id="info-title">Detalles</h2>
-            <p id="info-text">El corazón de Google. Desde su inicio, Google Search ha revolucionado la forma en que accedemos a la información, haciendo que el conocimiento del mundo sea universalmente accesible.</p>
+            <p id="info-text">Si descubriste un nuevo error o problema técnico, infórmalo directamente desde Google Drive.
+Ve a drive.google.com.
+Haz clic en Ayuda .
+Haz clic en Enviar comentarios.
+Ingresa tus comentarios y luego haz clic en Enviar.</p>
         </div>
 
     </div>
@@ -265,9 +253,9 @@
 
             const slides = [ /* Las imagenes junto con su info */
                 {
-                    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/960px-Googleplex_HQ_%28cropped%29.jpg",
+                    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Fes%2Fillustrations%2Fservicios-de-soporte-tecnico&psig=AOvVaw04L3iANTa8VPI3rFovmDmQ&ust=1752928288074000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPi_4Pe0xo4DFQAAAAAdAAAAABAL",
                     // la imagen de las oficinas de google
-                    info: "El corazón de Google. Desde su inicio, Google Search ha revolucionado la forma en que accedemos a la información, haciendo que el conocimiento del mundo sea universalmente accesible."
+                    info: "Tenemos uno de los mejores servicios de soporte tecnico del mundo, con asistencia, 24/7."
                 },
                 {
                     image: "https://i0.wp.com/ecuadorgeek.com/wp-content/uploads/2023/11/que-es-android-ecuador-geek.webp?resize=750%2C422&ssl=1",
@@ -285,42 +273,5 @@
                     info: "La infraestructura que lo hace todo posible. Google Cloud ofrece la misma tecnología segura y potente que Google utiliza para sus propios productos para potenciar empresas de todo el mundo."
                 }
             ];
-
-            const mainImage = document.getElementById('main-image');
-            const infoText = document.getElementById('info-text');
-            const dots = document.querySelectorAll('.dot');
-
-            let currentIndex = 1; // Para saber cual slide esta activo
-
-            function updateGallery(index) {
-                // Si el slide ya esta activo, no hacer nada
-                if (index == currentIndex && mainImage.src) return;
-
-                currentIndex = index;
-                mainImage.classList.add('fade-out');
-                
-                setTimeout(() => {
-                    const currentSlide = slides[index];
-                    mainImage.src = currentSlide.image; 
-                    infoText.textContent = currentSlide.info; // Para que el cuadro de informacion cambie tambien
-                    mainImage.classList.remove('fade-out'); // El efecto de desaparicion mientras cambia
-                }, 500);
-
-                dots.forEach(dot => dot.classList.remove('active')); // Aqui desaparece la imagen y aparece la otra
-                dots[index].classList.add('active');
-            }
-
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const index = dot.getAttribute('data-index');
-                    updateGallery(index);
-                });
-            });
-
-            // Cargar la imagen 1 al empezar //
-            updateGallery(0);
-
-        });
-    </script> <!-- Aqui acaba el script -->
 </body>
 </html>
